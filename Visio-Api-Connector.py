@@ -20,6 +20,11 @@ try:
         stream = os.popen('pyvizio --ip=' + ip + ':' + port + ' --auth=' + token + ' power on')
         output = stream.read()
         output
+    
+    if (command == 'off'):
+        stream = os.popen('pyvizio --ip=' + ip + ':' + port + ' --auth=' + token + ' power off')
+        output = stream.read()
+        output
 
     print('{ "complete": 1 }')
 except:
