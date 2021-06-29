@@ -1,5 +1,5 @@
 # CroniclePlugins
-My repository for my Cronicle Plugins
+A repository for my Cronicle Plugins
 
 # Vizio API Connector
 ## About
