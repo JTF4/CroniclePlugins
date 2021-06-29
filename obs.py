@@ -23,11 +23,10 @@ try:
     password = data['params']['password']
     command = data['params']['command']
     enableOverride = data['params']['enableOverride']
+	destinationScene = data['params']['destinationScene']
 
     ws = obsws(host, port, password)
     ws.connect()
-
-    destinationScene = data['params']['destinationScene']
 
     getScenes = ws.call(requests.GetSceneList())
     currentScene = getScenes.getCurrentScene()
@@ -37,11 +36,11 @@ try:
 
     print("Host:" + host)
     print("Port:" + port)
-    print("Password:" +password)
+    print("Password:" + password)
     print("Destination Scene:" + destinationScene)
-    print("Current Sceene:" + currentScene)
+    print("Current Scene:" + currentScene)
     print(getStreamStatus)
-    print("Override Status")
+    print("Override Status:")
     print(enableOverride)
 
     try:
@@ -55,7 +54,7 @@ try:
         if command == "Start Streaming Bool":
             if getStreamStatus == False:
                 if currentScene == destinationScene:
-                    print("Alredy running on the correct scene: Starting Stream")
+                    print("Already running on the correct scene: Starting Stream")
                     ws.call(requests.StartStreaming())
                 else:
                     print("Setting scene to destination and starting stream")
@@ -63,7 +62,7 @@ try:
                     time.sleep(2)
                     ws.call(requests.StartStreaming())
             else:
-                print("Stream alredy running. Command halted.")
+                print("Stream already running. Command halted.")
         elif command == "Stop Stream":
             ws.call(requests.StopStreaming())
         elif command == "Start Stream":
