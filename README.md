@@ -25,7 +25,9 @@ This is a Cronicle Plugin that allows you to control OBS Studio using the websoc
 
 ## Installation
 1. Make sure OBS Studio has the websockets plugin installed and configured.
-2. Install OBS Plugin in Cronicle
+2. Run `pip install obs-websocket-py`
+3. Copy `obs.py` to your Cronicle plugins directory
+4. Install OBS Plugin in Cronicle
    * Requires the following parameters:
       * `host`: Text Field: IP Address of OBS computer.
       * `port`: Text Field: Port that OBS websockets is using. Example: `4444`
@@ -33,3 +35,15 @@ This is a Cronicle Plugin that allows you to control OBS Studio using the websoc
       * `command`: Menu: Command to send to OBS. Items: Start Streaming Bool, Stop Stream, Start Stream, Switch Scene
       * `destinationScene`: Text Field: Scene to switch to in OBS
       * `enableOverride`: Menu: Allows you to switch scenes even if already streaming. Items: True, False
+
+# PJ Linnk
+## About
+This is a Cronicle Plugin that allows you to control any proejector that support PJLink Class 1
+
+## Installation
+1. Run `pip install pypjlink2` to install the required libraries
+2. Copy the pjlink.py plugin to your Cronicle plugin directory
+3. Install OBS Plugin in Cronicle
+   * Requires the following parameters:
+      * `host`: Text Field: IP Address of OBS computer.
+      * `command`: Menu: Selects from the available commands Items: `On, Off`
