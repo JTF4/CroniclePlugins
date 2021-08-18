@@ -36,7 +36,7 @@ This is a Cronicle Plugin that allows you to control OBS Studio using the websoc
       * `destinationScene`: Text Field: Scene to switch to in OBS
       * `enableOverride`: Menu: Allows you to switch scenes even if already streaming. Items: True, False
 
-# PJ Linnk
+# PJ Link
 ## About
 This is a Cronicle Plugin that allows you to control any proejector that support PJLink Class 1
 

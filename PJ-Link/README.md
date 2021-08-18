@@ -1,4 +1,4 @@
-# PJ Linnk
+# PJ Link
 ## About
 This is a Cronicle Plugin that allows you to control any proejector that support PJLink Class 1
 
