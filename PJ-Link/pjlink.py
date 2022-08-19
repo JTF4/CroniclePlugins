@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # Author: David Stevens 
 
@@ -19,25 +19,24 @@ stdinput = sys.stdin.readline()
 data = json.loads(stdinput)
 
 try:
-    host = data['params']['host']
-    command = data['params']['command']
+	host = data['params']['host']
+	command = data['params']['command']
 
-    print("Host:" + host)
-    print("Command:" + command)
-    try:
-        with Projector.from_address(host) as projector:
-            projector.authenticate()
-            if command == 'On':
-                projector.set_power('on')
-            elif command == 'Off':
-                projector.set_power('off')
-        print("End of list")
+	print("Host:" + host)
+	print("Command:" + command)
 
-    except KeyboardInterrupt:
-        pass
+	projector = Projector.from_address(host)
+	projector.authenticate()
 
+	if command == 'On':
+		projector.set_power('on')
+	elif command == 'Off':
+		projector.set_power('off')
 
-    print('{ "complete": 1 }')
-except:
-    print(error)
-    print('{ "complete": 1, "code": 999, "description": "Failed to execute." }')
+	print("End of list")
+
+	print('{ "complete": 1 }')
+except Exception as e:
+	print('Error:')
+	print(e)
+	print('{ "complete": 1, "code": 999, "description": "Failed to execute." }')
